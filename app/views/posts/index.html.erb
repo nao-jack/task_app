@@ -1,0 +1,36 @@
+ <div class="app-task contents-width">
+  <h2>スケジュール一覧</h2>
+ </div>
+ <div class="contents-width">
+  <table class="task-table" border="3" style="border-collapse: collapse; border-color:#C0C0C0;">
+    <thred>
+      <tr>
+        <th>ID</th>
+        <th>タイトル</th>
+        <th>開始日</th>
+        <th>終了日</th>
+        <th>終日</th>
+        <th>スケジュール更新日時</th>
+        <th>確認</th>
+        <th>編集</th>
+        <th>削除</th>
+       </tr>
+    </thred>
+    <tbody>
+      <%= @tasks.each do |task| %>
+      <tr>
+        <td><%= task.id %></td>
+        <td><%= task.title %></td>
+        <td><%= task.s_date %></td>
+        <td><%= task.e_date %></td>
+        <td><%= task.check %></td>
+        <td><%= task.created_at %></td>
+        <td><%= task.update_at %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<p class="new-task">
+    <%= link_to "スケジュール新規登録", "/new" %>
+    </p>
+</div>
