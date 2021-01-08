@@ -1,0 +1,35 @@
+ <div class="app-task contents-width">
+  <h2>スケジュール新規登録</h2>
+ </div>
+ <div class="contents-width">
+<%= form_for @task do |f| %>
+    <table　class="task-table" border="3" style="border-collapse: collapse; border-color:#C0C0C0;">
+        <tr>
+            <th><%= f.label :post_title ,"タイトル" %></th>
+            <td><%= f.text_field :title %></td>
+        </tr>
+        <tr>
+            <th><%= f.label :post_s_date ,"開始日" %></th>
+            <td><%= f.date_field :s_date %></td>
+        </tr>
+        <tr>
+            <th><%= f.label :post_e_date ,"終了日" %></th>
+            <td><%= f.date_field :e_date %></td>
+        </tr>
+        <tr>
+            <th><%= f.label :post_check ,"終日" %></th>
+            <td><%= f.number_field :check %></td>
+        </tr>
+        <tr>
+            <th><%= f.label :post_comment ,"スケージュールメモ" %></th>
+            <td><%= f.text_area :comment %></td>
+        </tr>
+    </table>
+    <div>
+        <ul>
+           <li><%= f.submit "登録する"%></li>
+           <li><%= link_to "スケジュール一覧に戻る", :posts %></li>
+        </ul>
+    </div>
+<% end %>
+</div>
