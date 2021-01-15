@@ -9,6 +9,15 @@
   </head>
 
   <body>
+    <header class="app-header">
+    <h1>スケジュールマネージャー</h1>
+    </header>
     <%= yield %>
   </body>
+   <footer>
+    <div class="app-footer">
+    <h1>現在日時:<%= Date.today.strftime("%Y年 %m月 %d日") %>／
+    <%= yield(:sum) %></h1>
+    </div>
+  </footer>
 </html>
