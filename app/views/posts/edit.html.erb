@@ -1,5 +1,5 @@
- <div class="app-task contents-width">
-  <h2>スケジュール新規登録</h2>
+<div class="app-task contents-width">
+  <h2>スケジュール編集</h2>
  </div>
  <div class="contents-width">
 <%= form_for @post do |f| %>
@@ -19,7 +19,7 @@
         </tr>
         <tr>
           <th><%= f.label :task_check ,"終日" %></th>
-          <td><%= f.check_box :check %></td>
+          <td><%= f.check_box :check %><br><%= "終日の場合はチェックを入れる" %></td>
         </tr>
         <tr>
           <th><%= f.label :task_comment ,"スケージュールメモ" %></th>
@@ -29,7 +29,7 @@
       </table>
       <div class="task-regi">
         <ul>
-           <li><%= f.submit "登録する"%></li>
+           <li><%= f.submit "登録する" %></li>
            <li><%= link_to "スケジュール一覧に戻る", :posts %></li>
         </ul>
       </div>

@@ -41,4 +41,16 @@ padding:0;
 th,td {
 border: solid 1px;
 padding: 10px 30px;
+text-align:center;
 }
+
+/*task/new*/
+.task-regi{
+  margin-top:50px;
+}
+input[type="text"] {
+        width: 300px;
+        height: 25px;
+    }
+
+/*show*/

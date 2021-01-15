@@ -1,0 +1,41 @@
+ <div class="app-task contents-width">
+  <h2>スケジュール確認</h2>
+ </div>
+ <div class="contents-width">
+    <table class="task-table" border="3" style="border-collapse: collapse; border-color:#C0C0C0;table-layout:fixed;width:80%;">
+       <colgroup span="1" style="width:220px;">
+       </colgroup>
+      <tbody>
+        <tr>
+          <th><%= "タイトル" %></th>
+          <td><%= @post.title %></td>
+        </tr>
+        <tr>
+          <th><%= "開始日" %></th>
+          <td><%= @post.s_date %></td>
+        </tr>
+        <tr>
+          <th><%= "終了日" %></th>
+          <td><%= @post.e_date %></td>
+        </tr>
+        <tr>
+          <th><%= "終日" %></th>
+           <td>
+        <% if @post.check %>
+          <strong>○</strong>
+        <% end %></td>
+        </tr>
+        <tr>
+          <th><%= "スケージュールメモ" %></th>
+          <td style="word-wrap:break-word;"><%= safe_join(@post.Comment.split("\n"),tag(:br)) %></td>
+        </tr>
+      </tbody>
+      </table>
+      <div class="task-regi">
+        <ul>
+           <li><%= link_to "編集する", [:edit, @post] %></li>
+           <li><%= link_to "削除する", @post,method: :delete, data: { confirm: "本当に削除しますか？" } %></li>
+           <li><%= link_to "スケジュール一覧に戻る", :posts %></li>
+        </ul>
+      </div>
+</div>
